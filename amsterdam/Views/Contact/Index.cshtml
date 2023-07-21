@@ -1,0 +1,119 @@
+﻿@{
+    Layout = null;
+}
+@model amsterdam.ViewModel.WebsiteAdmin
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="~/css/contact.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars"></i>
+        </label>
+        <label class="logo"><i class="fas fa-hiking">BON VOYAGE</i></label>
+        <ul>
+            <li><a asp-area="" asp-controller="Home" asp-action="Index">HOME</a> </li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Activities">ACTIVITIES</a> </li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Reservation">RESERVATION</a> </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <fieldset>
+                <legend>Contact Us</legend>
+                <table>
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" name="name" placeholder="Write your name"></td>
+                    </tr>
+                    <tr>
+                        <td>Surname</td>
+                        <td><input type="text" name="surname" placeholder="Write your surname"></td>
+                    </tr>
+                    <tr>
+                        <td>Mail Address</td>
+                        <td><input type="text" name="email"></td>
+                    </tr>
+                    <tr id="gender">
+                        <td>Gender</td>
+                        <td>
+                            W <input type="radio" name="gender">
+                            M <input type="radio" name="gender">
+                        </td>
+                    </tr>
+                    <tr id="checkbox">
+                        <td>What do you want?</td>
+                        <td>
+                            <input type="checkbox" name="select" value=""> Travel <br>
+                            <input type="checkbox" name="select" value=""> Learn Culture <br>
+                            <input type="checkbox" name="select" value=""> Learn Famous Restaurants <br>
+                            <input type="checkbox" name="select" value=""> Learn Famous Museums <br>
+                            <input type="checkbox" name="select" value=""> Learn Famous Places <br>
+                            <input type="checkbox" name="select" value=""> Booking Hotel <br>
+                            <input type="checkbox" name="select" value=""> Buy Ticket
+                        </td>
+                    </tr>
+                    <tr id="message">
+                        <td>Enter Your Message</td>
+                        <td><textarea name="text" row="50" column="10" placeholder="YOUR MESSAGE..."></textarea> </td>
+                    </tr>
+                    <tr>
+                        <td id="submit" colspan="2">
+                            <input type="submit" value="SAVE">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <legend>Our Information</legend>
+                <table id="info">
+                    <p>You can always reach us from the information below and send your questions. Thank you for choosing us.</p>
+                    <div style="margin-left:25px; margin-bottom:25px;">    
+                        <h4>@Model.website.Name Website Admins</h4>
+                        @if (Model.admin.Count == 0)
+                        {
+                            <text> There isn't any admin in this website. </text>
+                        }
+                        else
+                        {
+                            <ul>
+                                @foreach (var item in Model.admin)
+                                {
+                                    <li>
+                                        @item.Name @item.Phone @item.Email
+                                    </li>
+                                }
+                            </ul>
+                        }
+                    </div>
+                    <tr>
+                        <td>Phone Number:</td>
+                        <td>+905551234567</td>
+                    </tr>
+                    <tr>
+                        <td>Fax Number:</td>
+                        <td>+1-212-9876543</td>
+                    </tr>
+                    <tr>
+                        <td>Our Mail Address:</td>
+                        <td>bonvoyage@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Social Media:</td>
+                        <td><img src="https://img.icons8.com/ios/50/ffffff/facebook-new.png" /><img src="https://img.icons8.com/ios/50/ffffff/instagram-new--v1.png" /><img src="https://img.icons8.com/ios/50/ffffff/twitter--v1.png" /></td>
+                    </tr>
+                    
+                </table>
+            </fieldset>
+        </div>
+    </div>
+</body>
+</html>

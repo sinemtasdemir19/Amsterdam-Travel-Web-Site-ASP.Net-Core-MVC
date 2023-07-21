@@ -1,0 +1,55 @@
+﻿@model IEnumerable<amsterdam.Models.recommendation>
+@{
+    ViewData["Title"] = "Recommendation";
+    
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+}
+
+
+@section section3{
+    <li><a asp-area="" asp-controller="Home" asp-action="Reservation">RESERVATION</a> </li>
+}
+
+
+<div class="border p-4 bg-white">
+    <div class="row">
+        <div class="col-9">
+            <h2 class="text-info">Recommendations</h2>
+        </div>
+        <div class="col-3 text-right">
+            <a asp-action="Update_Insert" class="btn btn-success from-control">Add New Recommendation</a>
+        </div> 
+    </div>
+    <br />
+    <div>
+        @if(Model.Count()>0)
+        {
+            <table class="table table-striped border">
+                <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Comment</th>
+                    <th>Score</th>
+                </tr>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td>@item.Type</td>
+                        <td>@item.Name</td>
+                        <td>@item.Comment</td>
+                        <td>@item.Score</td>
+                        <td>
+                            <a class="btn btn-primary text-white" asp-action="Update_Insert" asp-route-Id="@item.Id">Update</a>
+                            <a class="btn btn-danger text-white" asp-action="Delete" asp-route-Id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+                
+            </table>
+        }
+    </div>
+    <div>
+        @await Component.InvokeAsync("NumberOfRecommendation")
+    </div>
+</div>
+

@@ -1,0 +1,168 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+nav {
+    height: 65px;
+    width: 100%;
+    background-color: rgb(86, 43, 17);
+    text-decoration: none;
+    box-sizing: border-box;
+    padding-top: 15px;
+    font-size: 18px;
+    z-index: 100;
+}
+
+    nav.logo {
+        padding-top: 30px;
+        float: left;
+    }
+
+label.logo {
+    color: white;
+    font-size: 24px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+    nav ul li {
+        display: inline-block;
+        line-height: 50px;
+        margin: -10px 10px;
+    }
+
+        nav ul li a {
+            text-transform: uppercase;
+            padding: 2px 13px;
+            color: white;
+        }
+
+nav a:hover {
+    background-color: rgb(192, 156, 109);
+    border-radius: 3px;
+    transition: .2s;
+}
+
+.checkbtn {
+    font-size: 24px;
+    float: right;
+    line-height: 50px;
+    margin-top: -10px;
+    margin-right: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media(max-width:952px) {
+    label.logo {
+        font-size: 24px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media(max-width:858px) {
+    .checkbtn {
+        display: inline-block;
+    }
+
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(192, 156, 109);
+        top: 50px;
+        text-align: center;
+        left: -100%;
+        transition: .5s all;
+        z-index: 100000;
+    }
+
+        nav ul li {
+            display: block;
+        }
+
+            nav ul li a {
+                font-size: 20px;
+            }
+
+    nav a:hover {
+        color: burlywood;
+        background-color: none;
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+    }
+}
+
+@media(min-width:858px) {
+    nav .logo {
+        margin-left: 50px;
+        float: left;
+    }
+}
+
+.banner {
+    display: flex;
+    height: 215px;
+    width: 100%;
+    margin-top: 5px;
+    font-size: 100px;
+    color: white;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b5/Amsterdam_banner.jpg);
+    background-size: 100% 100%;
+    justify-content: center;
+    padding: 30px;
+}
+
+#reservation {
+    background-color: rgb(86, 43, 17);
+    height: 350px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+#reservation img{
+    margin-top: 5px;
+    width: 250px;
+    height: 300px;
+}
+    #reservation a {
+        text-decoration: none;
+        color: white;
+        vertical-align: middle;
+    }
+    #reservation a:hover{
+        text-decoration: none;
+        color: rgb(86, 43, 17);
+        background-color: white;
+        transform: scale(2);
+    }
+    #reservation div {
+        display: inline-block;
+        width: 33%;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+
+

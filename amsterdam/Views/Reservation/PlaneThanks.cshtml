@@ -1,0 +1,40 @@
+﻿@{
+    //Layout = null;
+}
+@model amsterdam.Models.Plane
+@section thanksSection2{
+    <h3 style=" text-align:center"> @Model.Name thank you for choosing us.</h3>
+
+    <h4 style="text-align:center">Please check your e-mail adress. We prepared a list according to your requests.</h4>
+    }
+
+<table>
+        <tr>
+            <th>Name</th>
+            <td>@Model.Name</td>
+           </tr>
+		<tr>
+            <th>Email</th>
+            <td>@Model.Email</td>
+        </tr>
+        <tr>
+            <th>Phone</th>
+            <td>@Model.Phone</td>
+        </tr>
+        <tr>
+            <th>Departure</th>
+            <td>@Model.DeparturePlace</td>
+        </tr>
+        <tr>
+            <th>Departure Date</th>
+		    <td>@Model.DepartureDate</td>
+        </tr>
+	    <tr>
+            <th>Number Of Person</th>
+            <td>@Model.NumberOfPerson</td>
+        </tr>
+        <tr>
+            <th>Fight Class</th>
+            <td>@Model.FlightClass</td>
+        </tr>
+</table>

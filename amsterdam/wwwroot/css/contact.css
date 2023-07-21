@@ -1,0 +1,208 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("https://cdn.pixabay.com/photo/2016/10/20/18/35/earth-1756274_1280.jpg");
+    color: white;
+}
+
+nav {
+    height: 65px;
+    width: 100%;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding-top: 12px;
+    font-size: 18px;
+}
+
+    nav.logo {
+        padding-top: 30px;
+        float: left;
+    }
+
+label.logo {
+    color: white;
+    font-size: 24px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+    nav ul li {
+        display: inline-block;
+        line-height: 50px;
+        margin: -10px 10px;
+    }
+
+        nav ul li a {
+            text-transform: uppercase;
+            padding: 2px 13px;
+            color: white;
+        }
+
+nav a:hover {
+    background-color: rgba(11, 4, 27, 0.689);
+    border-radius: 3px;
+    transition: .2s;
+}
+
+.checkbtn {
+    font-size: 24px;
+    float: right;
+    line-height: 50px;
+    margin-top: -10px;
+    margin-right: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media(max-width:952px) {
+    label.logo {
+        font-size: 24px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media(max-width:900px) {
+    .checkbtn {
+        display: inline-block;
+    }
+
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(11, 4, 27, 0.689);
+        top: 50px;
+        text-align: center;
+        left: -100%;
+        transition: .5s all;
+        z-index: 100000;
+    }
+
+        nav ul li {
+            display: block;
+        }
+
+            nav ul li a {
+                font-size: 20px;
+            }
+
+    nav a:hover {
+        color: white;
+        background-color: none;
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+    }
+}
+
+@media(min-width:858px) {
+    nav .logo {
+        margin-left: 50px;
+        float: left;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+}
+
+input {
+    border-color: white;
+    background-color: rgba(0, 0, 0, 0.057);
+    color: white;
+    height: 30px;
+    width: 250px;
+}
+
+textarea {
+    background-color: rgba(0, 0, 0, 0.057);
+    color: white;
+}
+
+::placeholder {
+    color: white;
+}
+
+fieldset {
+    padding: 16px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: rgba(11, 4, 27, 0.689);
+}
+
+td {
+    padding: 4px;
+}
+
+#checkbox input {
+    border-color: white;
+    background-color: rgba(0, 0, 0, 0.057);
+    color: white;
+    height: 15px;
+    width: 15px;
+}
+
+#gender input {
+    border-color: white;
+    background-color: rgba(0, 0, 0, 0.057);
+    color: white;
+    height: 15px;
+    width: 15px;
+}
+
+#submit input {
+    border-color: white;
+    background-color: rgba(0, 0, 0, 0.057);
+    color: white;
+    height: 20px;
+    width: 100px;
+}
+
+#message textarea {
+    border-color: white;
+    background-color: rgba(0, 0, 0, 0.057);
+    color: white;
+    height: 100px;
+    width: 250px;
+}
+
+p {
+    padding: 25px 20px 60px 20px;
+    font-size: 20px;
+    text-align: center;
+    width: 400px;
+}
+
+legend {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#info td {
+    font-size: 20px;
+}

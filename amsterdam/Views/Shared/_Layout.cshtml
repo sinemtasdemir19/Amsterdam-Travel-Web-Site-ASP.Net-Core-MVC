@@ -1,0 +1,102 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Amsterdam</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        nav {
+            height: 65px;
+            width: 100%;
+            background-color: rgb(103, 64, 36);
+            text-decoration: none;
+            box-sizing: border-box;
+            padding-top: 15px;
+            font-size: 18px;
+            z-index: 100;
+        }
+            nav.logo {
+                padding-top: 30px;
+                float: left;
+            }
+
+        label.logo {
+            color: white;
+            font-size: 24px;
+        }
+
+        label i {
+            padding-left: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+        }
+
+        nav ul {
+            float: right;
+            margin-right: 20px;
+        }
+
+            nav ul li {
+                display: inline-block;
+                line-height: 50px;
+                margin: -10px 10px;
+            }
+
+                nav ul li a {
+                    text-transform: uppercase;
+                    padding: 2px 13px;
+                    color: white;
+                    margin-top: 5px;
+                }
+
+        nav a:hover {
+            background-color: rgb(192, 156, 109);
+            border-radius: 3px;
+            transition: .2s;
+        }
+        footer{
+            background-color: rgb(103, 64, 36);
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+        <nav class="navbar">
+            <label class="logo"><i class="fas fa-hiking">BON VOYAGE</i></label>
+            <ul>
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">HOME</a> </li>
+                @RenderSection("section3",false)
+                <li><a asp-area="" asp-controller="Reservation" asp-action="HotelApply">Hotel</a> </li>
+                <li><a asp-area="" asp-controller="Reservation" asp-action="PlaneApply">Plane </a> </li>
+            </ul>
+
+        </nav>
+    </header>
+
+	@RenderSection("thanksSection",false)
+    @RenderSection("thanksSection2",false)
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <footer class="border-top footer text-muted">
+        <div class="container" style="color: white;">
+            &copy; @DateTime.Now.Year - Bon Voyage -Ayşenur-Hazal-Sinem <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

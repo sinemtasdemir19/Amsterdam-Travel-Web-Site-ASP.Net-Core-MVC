@@ -1,0 +1,40 @@
+﻿@{
+    //Layout = null;
+}
+@model amsterdam.Models.Hotel
+@section thanksSection{
+    <h3 style=" text-align:center"> @Model.Name thank you for choosing us.</h3>
+
+    <h4 style="text-align:center">Please check your e-mail adress. We prepared a list according to your requests.</h4>
+    }
+<table>
+        <tr>
+            <th>Name</th>
+            <td>@Model.Name</td>
+           </tr>
+        <tr>
+            <th>Email</th>
+            <td>@Model.Email</td>
+        </tr>
+        <tr>
+            <th>Phone</th>
+            <td>@Model.Phone</td>
+        </tr>
+        <tr>
+            <th>Check In</th>
+            <td>@Model.CheckIn</td>
+        </tr>
+        <tr>
+            <th>Check Out</th>
+            <td>@Model.CheckOut</td>
+        </tr>
+        <tr>
+            <th>Number Of Person</th>
+            <td>@Model.NumberOfPerson</td>
+        </tr>
+        <tr>
+            <th>Room Types</th>
+            <td>@Model.RoomTypes</td>
+        </tr>
+      
+</table>

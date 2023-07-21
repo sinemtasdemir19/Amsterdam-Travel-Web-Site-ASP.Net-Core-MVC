@@ -1,0 +1,69 @@
+﻿@{
+//	Layout = null;
+}
+@model amsterdam.Models.Hotel
+
+<style>
+	td{
+		padding:13px;
+	}
+</style>
+
+
+@section section3{
+	<li><a asp-area="" asp-controller="Home" asp-action="Reservation">RESERVATION</a> </li>
+}
+
+<div style="display: flex;">
+
+	<div style="display: flex;">
+		<form method="post" asp-action="hotelapply" class="form">
+			<div asp-validation-summary="All"></div>
+			<table>
+				<tr>
+					<td><label asp-for="Name">Name:</label></td>
+					<td><input asp-for="Name"/></td>
+				</tr>
+				<tr>
+					<td><label asp-for="Email">Email:</label></td>
+					<td><input asp-for="Email" placeholder="example@gmail.com" /></td>
+				</tr>
+				<tr>
+					<td><label asp-for="Phone">Phone:</label></td>
+					<td><input asp-for="Phone" placeholder="+905551234567" /></td>
+				</tr>
+				<tr>
+					<td><label asp-for="CheckIn">Check In Date:</label></td>
+					<td><input asp-for="CheckIn" placeholder="08/12/2022" /></td>
+				</tr>
+				<tr>
+					<td><label asp-for="CheckOut">Check Out Date:</label></td>
+					<td><input asp-for="CheckOut" placeholder="08/12/2022" /></td>
+				</tr>
+				<tr>
+					<td><label asp-for="NumberOfPerson">Number Of Person:</label></td>
+					<td><input asp-for="NumberOfPerson" /></td>
+				</tr>
+				<tr>
+					<td><label asp-for="RoomTypes">Room Types:</label></td>
+					<td>
+						<select asp-for="RoomTypes">
+							<option value=" ">Select a room types</option>
+							<option>Suit</option>
+							<option>King</option>
+							<option>Queen</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><button type="submit">Submit</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<div style="display: flex;">
+		<img style="width: 450px; height: 400px; margin-left: 200px; margin-top: 40px" src="https://images.pexels.com/photos/2467558/pexels-photo-2467558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+	</div>
+</div>

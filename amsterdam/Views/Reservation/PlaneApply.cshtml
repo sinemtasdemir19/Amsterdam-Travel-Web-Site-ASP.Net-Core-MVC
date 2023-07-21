@@ -1,0 +1,65 @@
+﻿@{
+	//Layout = null;
+}
+@model amsterdam.Models.Plane
+<style>
+	td {
+		padding: 13px;
+	}
+</style>
+@section section3{
+	<li><a asp-area="" asp-controller="Home" asp-action="Reservation">RESERVATION</a> </li>
+}
+
+<div style="display: flex;">
+	<div style="display: flex;">
+		<form method="post" asp-action="planeapply" class="form">
+			<div asp-validation-summary="All"></div>
+			<table>
+				<tr>
+					<td><label asp-for="Name">Name:</label></td>
+					<td><input asp-for="Name" /></td>
+				</tr>
+				<tr>
+					<td><label asp-for="Email">Email:</label></td>
+					<td><input asp-for="Email" placeholder="example@gmail.com" /></td>
+				</tr>
+				<tr>
+					<td><label asp-for="Phone">Phone:</label></td>
+					<td><input asp-for="Phone" placeholder="+905551234567" /></td>
+				</tr>
+				<tr>
+					<td><label asp-for="DeparturePlace">Departure Place:</label></td>
+					<td><input asp-for="DeparturePlace" /></td>
+				</tr>
+				<tr>
+					<td><label asp-for="DepartureDate">Departure Date:</label></td>
+					<td><input asp-for="DepartureDate" placeholder="08/12/2022" /></td>
+				</tr>
+				<tr>
+					<td><label asp-for="NumberOfPerson">Number Of Person:</label></td>
+					<td><input asp-for="NumberOfPerson" /></td>
+				</tr>
+				<tr>
+					<td><label asp-for="FlightClass">Flight Class:</label></td>
+					<td>
+						<select asp-for="FlightClass">
+						<option value=" ">Select a flight class</option>
+						<option>Economic</option>
+						<option>Business</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><button type="submit">Submit</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div style="display: flex;">
+		<img style="width: 450px; height: 400px; margin-left: 200px; margin-top: 40px" src="https://media.istockphoto.com/id/136881645/tr/foto%C4%9Fraf/xl-jet-airplane-landing-at-sunset.jpg?s=612x612&w=0&k=20&c=v6mpDwDgDsp8A02ru4gKZ-dAXCyu_lHg9ceLmUzWVik=" />
+	</div>
+</div>
+
+
